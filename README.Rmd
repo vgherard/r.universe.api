@@ -16,9 +16,9 @@ knitr::opts_chunk$set(
 # runiv
 
 <!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version/r.universe.api)](https://CRAN.R-project.org/package=r.universe.api)
-[![R-CMD-check](https://github.com/vgherard/r.universe.api/workflows/R-CMD-check/badge.svg)](https://github.com/vgherard/r.universe.api/actions)
-[![Codecov test coverage](https://codecov.io/gh/vgherard/r.universe.api/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/r.universe.api?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/runiv)](https://CRAN.R-project.org/package=runiv)
+[![R-CMD-check](https://github.com/vgherard/runiv/workflows/R-CMD-check/badge.svg)](https://github.com/vgherard/runiv/actions)
+[![Codecov test coverage](https://codecov.io/gh/vgherard/runiv/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/runiv?branch=master)
 <!-- badges: end -->
 
 `{runiv}` provides a client for R-universe APIs associated to R-universes. From the [R-universe project page](https://ropensci.org/r-universe/):

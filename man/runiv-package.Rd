@@ -11,8 +11,8 @@ Client for R-universe APIs.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/vgherard/r.universe.api}
-  \item Report bugs at \url{https://github.com/vgherard/r.universe.api/issues}
+  \item \url{https://github.com/vgherard/runiv}
+  \item Report bugs at \url{https://github.com/vgherard/runiv/issues}
 }
 
 }

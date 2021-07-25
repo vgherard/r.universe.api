@@ -1,4 +1,4 @@
 library(testthat)
-library(r.universe.api)
+library(runiv)
 
-test_check("r.universe.api")
+test_check("runiv")

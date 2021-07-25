@@ -1,4 +1,4 @@
-# r.universe.api
+# runiv
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -54,6 +54,6 @@ runiv_api_req <- function(
         url <- httr::modify_url(
                 "https://", hostname = runiv_host(universe), path = path
                 )
-        ua <- httr::user_agent("https://github.com/vgherard/r.universe.api")
+        ua <- httr::user_agent("https://github.com/vgherard/runiv")
         httr::stop_for_status(httr::GET(url, ua))
 }
