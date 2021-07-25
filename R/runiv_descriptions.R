@@ -14,22 +14,25 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title Packages in an R-universe
+#' @title DESCRIPTIONs in an R-universe
 #'
-#' @description List all packages available in an R-universe.
+#' @description Get DESCRIPTIONs of packages available in an R-universe.
 #'
-#' @param owner A length one character. Name of user or organization
-#' owner of the R-universe repository.
+#' @inheritParams runiv_packages
 #'
-#' @return a character vector. List of R packages in the \code{owner}'s
-#' R-universe.
+#' @return a \code{data.frame}.
 #'
-#' @examples runiv_packages("vgherard")
+#' @examples runiv_descriptions("vgherard")
 #'
 #' @export
-runiv_packages <- function(owner)
+runiv_descriptions <- function(owner)
 {
-        response <- runiv_api_req(owner, path = "packages", method = "GET")
-        jsonlite::fromJSON( httr::content(response, as = "text") )
-}
+        response <- runiv_api_req(
+                owner, path = "stats/descriptions", method = "GET"
+                )
 
+        raw_text <- httr::content(response, "text")
+        con <- textConnection(raw_text) # Effectively splits raw_text at \n
+
+        jsonlite::stream_in(con)
+}
