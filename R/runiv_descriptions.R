@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title DESCRIPTIONs in an R-universe
+#' @title Get Packages DESCRIPTIONs
 #'
 #' @description Get DESCRIPTIONs of packages available in an R-universe.
 #'
@@ -31,10 +31,11 @@ runiv_descriptions <- function(universe)
 {
         response <- runiv_api_req(
                 universe, path = "stats/descriptions", method = "GET"
-                )
+        )
 
-        raw_text <- httr::content(response, "text")
-        con <- textConnection(raw_text) # Effectively splits raw_text at \n
+        txt <- httr::content(response, "text")
+        con <- textConnection(txt) # Effectively splits txt at newlines (\n)
+        res <- jsonlite::stream_in(con)
 
-        jsonlite::stream_in(con)
+        return(res)
 }

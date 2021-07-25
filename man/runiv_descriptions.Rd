@@ -2,7 +2,7 @@
 % Please edit documentation in R/runiv_descriptions.R
 \name{runiv_descriptions}
 \alias{runiv_descriptions}
-\title{DESCRIPTIONs in an R-universe}
+\title{Get Packages DESCRIPTIONs}
 \usage{
 runiv_descriptions(universe)
 }
