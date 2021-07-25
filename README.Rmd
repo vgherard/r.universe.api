@@ -21,7 +21,9 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/vgherard/r.universe.api/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/r.universe.api?branch=master)
 <!-- badges: end -->
 
-The goal of r.universe.api is to ...
+`{r.universe.api}` provides a client for R-universe APIs associated to R-universes. From the [R-universe project page](https://ropensci.org/r-universe/):
+
+> The package server provides REST APIs for managing package submissions and querying information about individual packages as well as on the repository level. These data can be accessed programmatically or displayed in a front-end dashboard.
 
 ## Installation
 
@@ -33,8 +35,7 @@ install.packages("r.universe.api")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ```{r example}
-library(r.universe.api)
+df <- r.universe.api::runiv_descriptions("vgherard")
+df[, c("Package", "Title", "Version")]
 ```

@@ -12,7 +12,14 @@ status](https://www.r-pkg.org/badges/version/r.universe.api)](https://CRAN.R-pro
 coverage](https://codecov.io/gh/vgherard/r.universe.api/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/r.universe.api?branch=master)
 <!-- badges: end -->
 
-The goal of r.universe.api is to …
+`{r.universe.api}` provides a client for R-universe APIs associated to
+R-universes. From the [R-universe project
+page](https://ropensci.org/r-universe/):
+
+> The package server provides REST APIs for managing package submissions
+> and querying information about individual packages as well as on the
+> repository level. These data can be accessed programmatically or
+> displayed in a front-end dashboard.
 
 ## Installation
 
@@ -25,8 +32,14 @@ install.packages("r.universe.api")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
-library(r.universe.api)
+df <- r.universe.api::runiv_descriptions("vgherard")
+df[, c("Package", "Title", "Version")]
+#>    Package                                             Title    Version
+#> 1      r2r                    R-Object to R-Object Hash Maps 0.1.1.9000
+#> 2   kgrams                  Classical k-gram Language Models      0.1.0
+#> 3 scribblr                          A Notepad Inside RStudio 0.2.0.9000
+#> 4  gsample   Efficient Weighted Sampling Without Replacement      0.1.0
+#> 5      sbo Text Prediction via Stupid Back-Off N-Gram Models      0.5.0
+#> 6     fcci              Feldman-Cousins Confidence Intervals      1.0.0
 ```
