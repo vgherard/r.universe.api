@@ -52,5 +52,5 @@ runiv_api_req <- function(
         method <- match.arg(method)
         url <- httr::modify_url(runiv_host(universe), path = path)
         ua <- httr::user_agent("https://github.com/vgherard/r.universe.api")
-        httr::GET(url, ua)
+        httr::stop_for_status(httr::GET(url, ua))
 }
