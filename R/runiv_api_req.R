@@ -27,7 +27,7 @@
 #' @noRd
 runiv_host <- function(universe) {
         stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
-        paste0("https://", universe, ".r-universe.dev/")
+        paste0(universe, ".r-universe.dev")
 }
 
 #' @title R-universe API request
@@ -51,7 +51,9 @@ runiv_api_req <- function(
         stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
         stopifnot(is.character(path) && length(path) == 1 && !is.na(path))
         method <- match.arg(method)
-        url <- httr::modify_url(runiv_host(universe), path = path)
+        url <- httr::modify_url(
+                "https://", hostname = runiv_host(universe), path = path
+                )
         ua <- httr::user_agent("https://github.com/vgherard/r.universe.api")
         httr::stop_for_status(httr::GET(url, ua))
 }
