@@ -35,7 +35,7 @@ runiv_descriptions <- function(universe)
 
         txt <- httr::content(response, "text")
         con <- textConnection(txt) # Effectively splits txt at newlines (\n)
-        res <- jsonlite::stream_in(con)
+        res <- jsonlite::stream_in(con, verbose = F)
 
         return(res)
 }

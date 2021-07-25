@@ -33,5 +33,5 @@ runiv_maintainers <- function(universe) {
                 universe, path = "stats/maintainers", method = "GET"
                 )
         txt <- httr::content(response, "text", encoding = "UTF-8")
-        jsonlite::stream_in(textConnection(txt))
+        jsonlite::stream_in(textConnection(txt), verbose = F)
 }

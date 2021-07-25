@@ -32,7 +32,7 @@
 runiv_src <- function(universe) {
         response <- runiv_api_req(universe, path = "src", method = "GET")
         txt <- httr::content(response, "text")
-        jsonlite::stream_in(textConnection(txt))
+        jsonlite::stream_in(textConnection(txt), verbose = F)
 }
 
 #' @rdname runiv_cran_like
@@ -40,5 +40,5 @@ runiv_src <- function(universe) {
 runiv_bin <- function(universe) {
         response <- runiv_api_req(universe, path = "bin", method = "GET")
         txt <- httr::content(response, "text", encoding = "UTF-8")
-        jsonlite::stream_in(textConnection(txt))
+        jsonlite::stream_in(textConnection(txt), verbose = F)
 }
