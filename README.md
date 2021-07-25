@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# r.universe.api
+# runiv
 
 <!-- badges: start -->
 
@@ -12,7 +12,7 @@ status](https://www.r-pkg.org/badges/version/r.universe.api)](https://CRAN.R-pro
 coverage](https://codecov.io/gh/vgherard/r.universe.api/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/r.universe.api?branch=master)
 <!-- badges: end -->
 
-`{r.universe.api}` provides a client for R-universe APIs associated to
+`{runiv}` provides a client for R-universe APIs associated to
 R-universes. From the [R-universe project
 page](https://ropensci.org/r-universe/):
 
@@ -23,17 +23,17 @@ page](https://ropensci.org/r-universe/):
 
 ## Installation
 
-You can install the released version of r.universe.api from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the development version of `runiv` using
 
 ``` r
-install.packages("r.universe.api")
+# install.packages("devtools")
+devtools::install_github("vgherard/runiv")
 ```
 
 ## Example
 
 ``` r
-df <- r.universe.api::runiv_descriptions("vgherard")
+df <- runiv::runiv_descriptions("vgherard")
 df[, c("Package", "Title", "Version")]
 #>    Package                                             Title    Version
 #> 1      r2r                    R-Object to R-Object Hash Maps 0.1.1.9000

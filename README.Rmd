@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# r.universe.api
+# runiv
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/r.universe.api)](https://CRAN.R-project.org/package=r.universe.api)
@@ -21,21 +21,22 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/vgherard/r.universe.api/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/r.universe.api?branch=master)
 <!-- badges: end -->
 
-`{r.universe.api}` provides a client for R-universe APIs associated to R-universes. From the [R-universe project page](https://ropensci.org/r-universe/):
+`{runiv}` provides a client for R-universe APIs associated to R-universes. From the [R-universe project page](https://ropensci.org/r-universe/):
 
 > The package server provides REST APIs for managing package submissions and querying information about individual packages as well as on the repository level. These data can be accessed programmatically or displayed in a front-end dashboard.
 
 ## Installation
 
-You can install the released version of r.universe.api from [CRAN](https://CRAN.R-project.org) with:
+You can install the development version of `runiv` using
 
 ``` r
-install.packages("r.universe.api")
+# install.packages("devtools")
+devtools::install_github("vgherard/runiv")
 ```
 
 ## Example
 
 ```{r example}
-df <- r.universe.api::runiv_descriptions("vgherard")
+df <- runiv::runiv_descriptions("vgherard")
 df[, c("Package", "Title", "Version")]
 ```
