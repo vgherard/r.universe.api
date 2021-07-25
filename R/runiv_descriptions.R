@@ -25,10 +25,10 @@
 #' @examples runiv_descriptions("vgherard")
 #'
 #' @export
-runiv_descriptions <- function(owner)
+runiv_descriptions <- function(universe)
 {
         response <- runiv_api_req(
-                owner, path = "stats/descriptions", method = "GET"
+                universe, path = "stats/descriptions", method = "GET"
                 )
 
         raw_text <- httr::content(response, "text")

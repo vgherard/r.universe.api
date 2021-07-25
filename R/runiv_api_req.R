@@ -23,17 +23,16 @@
 #' @return a string, API hostname for the R-universe specified by \code{owner}.
 #'
 #' @noRd
-runiv_host <- function(owner) {
-        stopifnot(is.character(owner) && length(owner) == 1 && !is.na(owner))
-        paste0("https://", owner, ".r-universe.dev/")
+runiv_host <- function(universe) {
+        stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
+        paste0("https://", universe, ".r-universe.dev/")
 }
 
 #' @title R-universe API request
 #'
 #' @description Make API request to an R-universe.
 #'
-#' @param owner A length one character. Name of user or organization
-#' owner of the R-universe repository.
+#' @inheritParams runiv_packages
 #' @param path endpoint of the API request.
 #' @param method API request method.
 #'
@@ -41,13 +40,13 @@ runiv_host <- function(owner) {
 #'
 #' @noRd
 runiv_api_req <- function(
-        owner, path, method = c("GET", "POST", "PUT", "DELETE")
+        universe, path, method = c("GET", "POST", "PUT", "DELETE")
         )
 {
-        stopifnot(is.character(owner) && length(owner) == 1 && !is.na(owner))
+        stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
         stopifnot(is.character(path) && length(path) == 1 && !is.na(path))
         method <- match.arg(method)
-        url <- httr::modify_url(runiv_host(owner), path = path)
+        url <- httr::modify_url(runiv_host(universe), path = path)
         ua <- httr::user_agent("https://github.com/vgherard/r.universe.api")
         httr::GET(url, ua)
 }

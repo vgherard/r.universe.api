@@ -4,11 +4,11 @@
 \alias{runiv_descriptions}
 \title{DESCRIPTIONs in an R-universe}
 \usage{
-runiv_descriptions(owner)
+runiv_descriptions(universe)
 }
 \arguments{
-\item{owner}{A length one character. Name of user or organization
-owner of the R-universe repository.}
+\item{universe}{A length one character. User or organization name of the
+the R-universe owner.}
 }
 \value{
 a \code{data.frame}.

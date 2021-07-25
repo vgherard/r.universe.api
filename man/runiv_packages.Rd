@@ -4,11 +4,11 @@
 \alias{runiv_packages}
 \title{Packages in an R-universe}
 \usage{
-runiv_packages(owner)
+runiv_packages(universe)
 }
 \arguments{
-\item{owner}{A length one character. Name of user or organization
-owner of the R-universe repository.}
+\item{universe}{A length one character. User or organization name of the
+the R-universe owner.}
 }
 \value{
 a character vector. List of R packages in the \code{owner}'s

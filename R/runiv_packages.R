@@ -18,8 +18,8 @@
 #'
 #' @description List all packages available in an R-universe.
 #'
-#' @param owner A length one character. Name of user or organization
-#' owner of the R-universe repository.
+#' @param universe A length one character. User or organization name of the
+#' the R-universe owner.
 #'
 #' @return a character vector. List of R packages in the \code{owner}'s
 #' R-universe.
@@ -27,9 +27,8 @@
 #' @examples runiv_packages("vgherard")
 #'
 #' @export
-runiv_packages <- function(owner)
+runiv_packages <- function(universe)
 {
-        response <- runiv_api_req(owner, path = "packages", method = "GET")
+        response <- runiv_api_req(universe, path = "packages", method = "GET")
         jsonlite::fromJSON( httr::content(response, as = "text") )
 }
-
