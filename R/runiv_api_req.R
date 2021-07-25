@@ -47,6 +47,7 @@ runiv_api_req <- function(
         universe, path, method = c("GET", "POST", "PUT", "DELETE")
         )
 {
+        stopifnot(curl::has_internet())
         stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
         stopifnot(is.character(path) && length(path) == 1 && !is.na(path))
         method <- match.arg(method)
