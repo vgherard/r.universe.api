@@ -26,6 +26,8 @@
 #'
 #' @examples runiv_packages("vgherard")
 #'
+#' @author Valerio Gherardi
+#'
 #' @export
 runiv_packages <- function(universe)
 {

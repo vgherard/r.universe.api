@@ -22,6 +22,8 @@
 #'
 #' @return a string, API hostname for the R-universe specified by \code{owner}.
 #'
+#' @author Valerio Gherardi
+#'
 #' @noRd
 runiv_host <- function(universe) {
         stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
@@ -37,6 +39,8 @@ runiv_host <- function(universe) {
 #' @param method API request method.
 #'
 #' @return a string, API hostname for the R-universe specified by \code{owner}.
+#'
+#' @author Valerio Gherardi
 #'
 #' @noRd
 runiv_api_req <- function(

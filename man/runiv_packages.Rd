@@ -21,3 +21,6 @@ List all packages available in an R-universe.
 runiv_packages("vgherard")
 
 }
+\author{
+Valerio Gherardi
+}

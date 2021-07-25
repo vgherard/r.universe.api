@@ -20,3 +20,6 @@ Get DESCRIPTIONs of packages available in an R-universe.
 runiv_descriptions("vgherard")
 
 }
+\author{
+Valerio Gherardi
+}
