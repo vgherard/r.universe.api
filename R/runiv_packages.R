@@ -14,9 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title R-universe API request
+#' @title Packages in an R-universe
 #'
-#' @description Make API request to an R-universe.
+#' @description List all packages available in an R-universe.
 #'
 #' @param owner A length one character. Name of user or organization
 #' owner of the R-universe repository.

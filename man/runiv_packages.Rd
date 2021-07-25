@@ -2,7 +2,7 @@
 % Please edit documentation in R/runiv_packages.R
 \name{runiv_packages}
 \alias{runiv_packages}
-\title{R-universe API request}
+\title{Packages in an R-universe}
 \usage{
 runiv_packages(owner)
 }
@@ -15,7 +15,7 @@ a character vector. List of R packages in the \code{owner}'s
 R-universe.
 }
 \description{
-Make API request to an R-universe.
+List all packages available in an R-universe.
 }
 \examples{
 runiv_packages("vgherard")
