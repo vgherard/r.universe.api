@@ -20,23 +20,50 @@
 #'
 #' @param universe A length one character. User or organization name of the
 #' the R-universe owner.
+#' @param package either \code{NULL}, or a length one character. Package name
+#' (see details).
+#' @param version either \code{NULL}, or a character vector. Package version
+#' (see details).
 #'
-#' @return a character vector. List of R packages in the \code{owner}'s
-#' R-universe.
+#' @return a \code{data.frame} if both \code{package} and \code{version} are
+#' not \code{NULL}, a \code{character} vector otherwise.
 #'
-#' @examples runiv_packages("vgherard")
+#' @details This function gives access to three types of information, depending
+#' on how many arguments are different from \code{NULL}:
+#'
+#' - \code{runiv_packages(universe)} lists all packages in the R-universe
+#' \code{universe}.
+#' - \code{runiv_packages(universe, package)}, where \code{package} is a
+#' string, lists all available version for package \code{package} in
+#' this universe.
+#' - \code{runiv_packages(universe, package, version)} lists all available
+#' builds for package \code{package} of version \code{version}
+#' (specified as a string).
+#'
+#' The argument \code{version} is ignored if \code{package} is \code{NULL}.
+#'
+#' @examples
+#' ( packages <- runiv_packages("vgherard") )
+#' ( versions <- runiv_packages("vgherard", packages[[1]]) )
+#' ( versions <- runiv_packages("vgherard", packages[[1]], versions[[1]]) )
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_packages <- function(universe, package = NULL)
+runiv_packages <- function(universe, package = NULL, version = NULL)
 {
         assert_is_string(universe)
         path <- "packages"
+
         if (!is.null(package)) {
                 assert_is_string(package)
-                path <- paste0(path, package, sep = "/")
+                path <- paste0(path, "/", package)
+                if (!is.null(version)) {
+                        assert_is_string(version)
+                        path <- paste0(path, "/", version)
+                }
         }
+
         response <- runiv_api_req(universe, path = path, method = "GET")
         parse_json_response(response)
 }

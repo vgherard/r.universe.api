@@ -4,21 +4,45 @@
 \alias{runiv_packages}
 \title{Packages in an R-universe}
 \usage{
-runiv_packages(universe)
+runiv_packages(universe, package = NULL, version = NULL)
 }
 \arguments{
 \item{universe}{A length one character. User or organization name of the
 the R-universe owner.}
+
+\item{package}{either \code{NULL}, or a length one character. Package name
+(see details).}
+
+\item{version}{either \code{NULL}, or a character vector. Package version
+(see details).}
 }
 \value{
-a character vector. List of R packages in the \code{owner}'s
-R-universe.
+a \code{data.frame} if both \code{package} and \code{version} are
+not \code{NULL}, a \code{character} vector otherwise.
 }
 \description{
 List all packages available in an R-universe.
 }
+\details{
+This function gives access to three types of information, depending
+on how many arguments are different from \code{NULL}:
+\itemize{
+\item \code{runiv_packages(universe)} lists all packages in the R-universe
+\code{universe}.
+\item \code{runiv_packages(universe, package)}, where \code{package} is a
+string, lists all available version for package \code{package} in
+this universe.
+\item \code{runiv_packages(universe, package, version)} lists all available
+builds for package \code{package} of version \code{version}
+(specified as a string).
+}
+
+The argument \code{version} is ignored if \code{package} is \code{NULL}.
+}
 \examples{
-runiv_packages("vgherard")
+( packages <- runiv_packages("vgherard") )
+( versions <- runiv_packages("vgherard", packages[[1]]) )
+( versions <- runiv_packages("vgherard", packages[[1]], versions[[1]]) )
 
 }
 \author{
