@@ -29,6 +29,7 @@
 #'
 #' @export
 runiv_maintainers <- function(universe) {
+        assert_is_string(universe)
         response <- runiv_api_req(
                 universe, path = "stats/maintainers", method = "GET"
                 )

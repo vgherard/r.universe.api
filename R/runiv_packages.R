@@ -31,6 +31,7 @@
 #' @export
 runiv_packages <- function(universe)
 {
+        assert_is_string(universe)
         response <- runiv_api_req(universe, path = "packages", method = "GET")
         parse_json_response(response)
 }

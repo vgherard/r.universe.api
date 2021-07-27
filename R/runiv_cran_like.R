@@ -30,6 +30,7 @@
 #' @examples runiv_src("vgherard")
 #' @export
 runiv_src <- function(universe) {
+        assert_is_string(universe)
         response <- runiv_api_req(universe, path = "src", method = "GET")
         parse_ndjson_response(response)
 }
@@ -37,6 +38,7 @@ runiv_src <- function(universe) {
 #' @rdname runiv_cran_like
 #' @export
 runiv_bin <- function(universe) {
+        assert_is_string(universe)
         response <- runiv_api_req(universe, path = "bin", method = "GET")
         parse_ndjson_response(response)
 }
