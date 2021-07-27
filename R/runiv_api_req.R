@@ -26,7 +26,7 @@
 #'
 #' @noRd
 runiv_host <- function(universe) {
-        stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
+        assert_is_string(universe)
         paste0(universe, ".r-universe.dev")
 }
 
@@ -47,9 +47,9 @@ runiv_api_req <- function(
         universe, path, method = c("GET", "POST", "PUT", "DELETE")
         )
 {
-        stopifnot(curl::has_internet())
-        stopifnot(is.character(universe) && length(universe) == 1 && !is.na(universe))
-        stopifnot(is.character(path) && length(path) == 1 && !is.na(path))
+        assert_has_internet()
+        assert_is_string(universe)
+        assert_is_string(path)
         method <- match.arg(method)
         url <- httr::modify_url(
                 "https://", hostname = runiv_host(universe), path = path

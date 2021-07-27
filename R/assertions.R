@@ -52,3 +52,19 @@ runiv_domain_error <- function(name, expectation)
         x <- paste0("'", name, "' must be ", expectation, ".")
         rlang::abort(c(h, x = x), class = "runiv_domain_error")
 }
+
+#' @title Assert Online
+#'
+#' @description Throw an error of no internet connection.
+#'
+#' @author Valerio Gherardi
+#'
+#' @noRd
+
+assert_has_internet <- function()
+{
+        if (curl::has_internet())
+                return(invisible(TRUE))
+        h <- "No internet connection"
+        rlang::abort(h, class = "runiv_offline_error")
+}
