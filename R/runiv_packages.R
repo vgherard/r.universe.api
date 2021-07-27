@@ -29,9 +29,14 @@
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_packages <- function(universe)
+runiv_packages <- function(universe, package = NULL)
 {
         assert_is_string(universe)
-        response <- runiv_api_req(universe, path = "packages", method = "GET")
+        path <- "packages"
+        if (!is.null(package)) {
+                assert_is_string(package)
+                path <- paste0(path, package, sep = "/")
+        }
+        response <- runiv_api_req(universe, path = path, method = "GET")
         parse_json_response(response)
 }

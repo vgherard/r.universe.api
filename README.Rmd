@@ -37,6 +37,6 @@ devtools::install_github("vgherard/runiv")
 ## Example
 
 ```{r example}
-df <- runiv::runiv_descriptions("vgherard")
+df <- runiv::runiv_stats_descriptions("vgherard")
 df[, c("Package", "Title", "Version")]
 ```

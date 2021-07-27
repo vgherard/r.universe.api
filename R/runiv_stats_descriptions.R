@@ -14,24 +14,24 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title List maintainers of an R-universe
+#' @title Get Packages DESCRIPTIONs
 #'
-#' @description Lists all maintainers, identified by email address,
-#' of an R-universe.
+#' @description Get DESCRIPTIONs of packages available in an R-universe.
 #'
 #' @inheritParams runiv_packages
 #'
 #' @return a \code{data.frame}.
 #'
-#' @examples runiv_maintainers("vgherard")
+#' @examples runiv_stats_descriptions("vgherard")
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_maintainers <- function(universe) {
+runiv_stats_descriptions <- function(universe)
+{
         assert_is_string(universe)
         response <- runiv_api_req(
-                universe, path = "stats/maintainers", method = "GET"
-                )
+                universe, path = "stats/descriptions", method = "GET"
+        )
         parse_ndjson_response(response)
 }
