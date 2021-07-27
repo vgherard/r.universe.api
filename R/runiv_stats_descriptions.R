@@ -14,9 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title Get Packages DESCRIPTIONs
+#' @title DESCRIPTIONs
 #'
-#' @description Get DESCRIPTIONs of packages available in an R-universe.
+#' @description Get DESCRIPTION files of packages available in an R-universe.
 #'
 #' @inheritParams runiv_packages
 #'

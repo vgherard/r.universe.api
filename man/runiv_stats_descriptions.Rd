@@ -2,7 +2,7 @@
 % Please edit documentation in R/runiv_stats_descriptions.R
 \name{runiv_stats_descriptions}
 \alias{runiv_stats_descriptions}
-\title{Get Packages DESCRIPTIONs}
+\title{DESCRIPTIONs}
 \usage{
 runiv_stats_descriptions(universe)
 }
@@ -14,7 +14,7 @@ the R-universe owner.}
 a \code{data.frame}.
 }
 \description{
-Get DESCRIPTIONs of packages available in an R-universe.
+Get DESCRIPTION files of packages available in an R-universe.
 }
 \examples{
 runiv_stats_descriptions("vgherard")
