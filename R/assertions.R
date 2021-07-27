@@ -30,7 +30,7 @@ assert_is_string <- function(x, name = deparse(substitute(x)))
 {
         if (is.character(x) && length(x) == 1 && !is.na(x))
                 return(invisible(TRUE))
-        runiv_domain_error(name, "a length one character vector (not NA).")
+        runiv_domain_error(name, "a length one character vector (not NA)")
 }
 
 #' @title Domain Errors
@@ -52,6 +52,3 @@ runiv_domain_error <- function(name, expectation)
         x <- paste0("'", name, "' must be ", expectation, ".")
         rlang::abort(c(h, x = x), class = "runiv_domain_error")
 }
-
-domain_error_class <- function()
-        "runiv_domain_error"
