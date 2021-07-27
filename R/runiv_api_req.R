@@ -55,5 +55,7 @@ runiv_api_req <- function(
                 "https://", hostname = runiv_host(universe), path = path
                 )
         ua <- httr::user_agent("https://github.com/vgherard/runiv")
-        httr::stop_for_status(httr::GET(url, ua))
+
+        fun <- get(method, envir = rlang::fn_env(httr::GET))
+        httr::stop_for_status(fun(url, ua))
 }
