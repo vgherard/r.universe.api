@@ -32,10 +32,5 @@ runiv_descriptions <- function(universe)
         response <- runiv_api_req(
                 universe, path = "stats/descriptions", method = "GET"
         )
-
-        txt <- httr::content(response, "text")
-        con <- textConnection(txt) # Effectively splits txt at newlines (\n)
-        res <- jsonlite::stream_in(con, verbose = F)
-
-        return(res)
+        parse_ndjson_response(response)
 }

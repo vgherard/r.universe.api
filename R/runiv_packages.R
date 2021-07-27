@@ -32,5 +32,5 @@
 runiv_packages <- function(universe)
 {
         response <- runiv_api_req(universe, path = "packages", method = "GET")
-        jsonlite::fromJSON( httr::content(response, as = "text") )
+        parse_json_response(response)
 }

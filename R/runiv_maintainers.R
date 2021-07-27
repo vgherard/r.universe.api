@@ -32,6 +32,5 @@ runiv_maintainers <- function(universe) {
         response <- runiv_api_req(
                 universe, path = "stats/maintainers", method = "GET"
                 )
-        txt <- httr::content(response, "text", encoding = "UTF-8")
-        jsonlite::stream_in(textConnection(txt), verbose = F)
+        parse_ndjson_response(response)
 }
