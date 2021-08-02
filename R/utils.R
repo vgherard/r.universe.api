@@ -29,7 +29,8 @@ parse_ndjson_response <- function(response)
 {
         txt <- httr::content(response, as = "text", encoding = "UTF-8")
         con <- textConnection(txt) # Effectively splits txt at newlines (\n)
-        jsonlite::stream_in(con, verbose = F)
+        res <- jsonlite::stream_in(con, verbose = F)
+        tibble::as_tibble(res)
 }
 
 #' @title Parse JSON response
@@ -53,7 +54,7 @@ parse_json_response <- function(
         )
 {
         json <- httr::content(response, as = "text")
-        jsonlite::fromJSON(
+        res <- jsonlite::fromJSON(
                 json,
                 simplifyVector = simplifyVector,
                 simplifyDataFrame = simplifyDataFrame,
@@ -61,4 +62,9 @@ parse_json_response <- function(
                 flatten = flatten,
                 ...
                 )
+
+        if (is.data.frame(res))
+                res <- tibble::as_tibble(res)
+
+        res
 }

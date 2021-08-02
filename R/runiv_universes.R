@@ -14,20 +14,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' Not implemented
-#' #' @title List R-universes
-#' #'
-#' #' @description List all available R-universes.
-#' #'
-#' #' @return A character vector
-#' #'
-#' #' @examples runiv_universes()
-#' #'
-#' #' @author Valerio Gherardi
-#' #'
-#' #' @noRd
-#' runiv_universes <- function() {
-#'         gh_api <- "https://api.github.com"
-#'         response <- httr::GET(gh_api, path = "/orgs/r-universe/repos")
-#'         jsonlite::fromJSON(httr::content(response, "text"))
-#' }
+
+#' @title List R-universes
+#'
+#' @description List all available R-universes.
+#'
+#' @return A character vector
+#'
+#' @examples runiv_universes()
+#'
+#' @author Valerio Gherardi
+#'
+#' @export
+runiv_universes <- function() {
+        response <- runiv_api_req(universe = NULL, path = "stats/organizations")
+        parse_ndjson_response(response)
+}

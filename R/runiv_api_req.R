@@ -26,6 +26,8 @@
 #'
 #' @noRd
 runiv_host <- function(universe) {
+        if (is.null(universe))
+                return("r-universe.dev")
         assert_is_string(universe)
         paste0(universe, ".r-universe.dev")
 }
@@ -48,7 +50,8 @@ runiv_api_req <- function(
         )
 {
         assert_has_internet()
-        assert_is_string(universe)
+        if (!is.null(universe))
+                assert_is_string(universe)
         assert_is_string(path)
         method <- match.arg(method)
         url <- httr::modify_url(
