@@ -17,8 +17,8 @@ the R-universe owner.}
 (see details).}
 }
 \value{
-a \code{data.frame} if both \code{package} and \code{version} are
-not \code{NULL}, a \code{character} vector otherwise.
+a \code{\link[tibble]{tibble}} if both \code{package} and
+\code{version} are not \code{NULL}, a \code{character} vector otherwise.
 }
 \description{
 List all packages available in an R-universe.

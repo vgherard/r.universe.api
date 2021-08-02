@@ -11,7 +11,7 @@ runiv_stats_checks(universe)
 the R-universe owner.}
 }
 \value{
-a \code{data.frame}.
+a \code{\link[tibble]{tibble}}.
 }
 \description{
 Get list with recent builds and checks of packages available in

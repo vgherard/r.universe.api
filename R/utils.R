@@ -20,7 +20,7 @@
 #'
 #' @param response an \code{httr} response.
 #'
-#' @return a \code{data.frame}.
+#' @return a \code{\link[tibble]{tibble}}.
 #'
 #' @author Valerio Gherardi
 #'
@@ -39,7 +39,7 @@ parse_ndjson_response <- function(response)
 #'
 #' @param response an \code{httr} response.
 #'
-#' @return a \code{data.frame}.
+#' @return a \code{\link[tibble]{tibble}}.
 #'
 #' @author Valerio Gherardi
 #'

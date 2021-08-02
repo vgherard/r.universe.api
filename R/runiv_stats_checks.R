@@ -21,7 +21,7 @@
 #'
 #' @inheritParams runiv_packages
 #'
-#' @return a \code{data.frame}.
+#' @return a \code{\link[tibble]{tibble}}.
 #'
 #' @examples runiv_stats_checks("vgherard")
 #'

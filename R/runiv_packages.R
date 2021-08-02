@@ -25,8 +25,8 @@
 #' @param version either \code{NULL}, or a character vector. Package version
 #' (see details).
 #'
-#' @return a \code{data.frame} if both \code{package} and \code{version} are
-#' not \code{NULL}, a \code{character} vector otherwise.
+#' @return a \code{\link[tibble]{tibble}} if both \code{package} and
+#' \code{version} are not \code{NULL}, a \code{character} vector otherwise.
 #'
 #' @details This function gives access to three types of information, depending
 #' on how many arguments are different from \code{NULL}:

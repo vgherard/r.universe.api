@@ -11,7 +11,7 @@ runiv_stats_descriptions(universe)
 the R-universe owner.}
 }
 \value{
-a \code{data.frame}.
+a \code{\link[tibble]{tibble}}.
 }
 \description{
 Get DESCRIPTION files of packages available in an R-universe.

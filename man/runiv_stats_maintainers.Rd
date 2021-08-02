@@ -11,7 +11,7 @@ runiv_stats_maintainers(universe)
 the R-universe owner.}
 }
 \value{
-a \code{data.frame}.
+a \code{\link[tibble]{tibble}}.
 }
 \description{
 Lists all maintainers, identified by email address,
