@@ -15,4 +15,5 @@ test_that("Test no error if connected to internet", {
 test_that("Test error if no internet connection", {
         Sys.setenv("SIMULATE_OFFLINE" = TRUE)
         expect_error(assert_has_internet(), class = "runiv_offline_error")
+        Sys.setenv("SIMULATE_OFFLINE" = FALSE)
 })
