@@ -166,126 +166,21 @@ builds for package <code>package</code> of version <code>version</code>
     <pre class="examples"><div class='input'><span class='op'>(</span> <span class='va'>packages</span> <span class='op'>&lt;-</span> <span class='fu'>runiv_packages</span><span class='op'>(</span><span class='st'>"vgherard"</span><span class='op'>)</span> <span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] "fcci"     "gsample"  "kgrams"   "r2r"      "runiv"    "sbo"      "scribblr"</div><div class='input'><span class='op'>(</span> <span class='va'>versions</span> <span class='op'>&lt;-</span> <span class='fu'>runiv_packages</span><span class='op'>(</span><span class='st'>"vgherard"</span>, <span class='va'>packages</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] "1.0.0"</div><div class='input'><span class='op'>(</span> <span class='va'>versions</span> <span class='op'>&lt;-</span> <span class='fu'>runiv_packages</span><span class='op'>(</span><span class='st'>"vgherard"</span>, <span class='va'>packages</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>, <span class='va'>versions</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'>)</span>
-</div><div class='output co'>#&gt;                        _id Package    Type                                Title
-#&gt; 1 60e02362e8525d5b6388b84a    fcci Package Feldman-Cousins Confidence Intervals
-#&gt; 2 60e02362e8525d5b6388b852    fcci Package Feldman-Cousins Confidence Intervals
-#&gt; 3 60e02362e8525d5b6388b85a    fcci Package Feldman-Cousins Confidence Intervals
-#&gt; 4 60e02362e8525d5b6388b864    fcci Package Feldman-Cousins Confidence Intervals
-#&gt; 5 60e02365e8525d5b6388b86f    fcci Package Feldman-Cousins Confidence Intervals
-#&gt;   Version
-#&gt; 1   1.0.0
-#&gt; 2   1.0.0
-#&gt; 3   1.0.0
-#&gt; 4   1.0.0
-#&gt; 5   1.0.0
-#&gt;                                                                                                                                             Authors@R
-#&gt; 1 person(given = "Valerio",\nfamily = "Gherardi",\nrole = c("aut", "cre"),\nemail = "vgherard@sissa.it",\ncomment = c(ORCID = "0000-0002-8215-3013"))
-#&gt; 2 person(given = "Valerio",\nfamily = "Gherardi",\nrole = c("aut", "cre"),\nemail = "vgherard@sissa.it",\ncomment = c(ORCID = "0000-0002-8215-3013"))
-#&gt; 3 person(given = "Valerio",\nfamily = "Gherardi",\nrole = c("aut", "cre"),\nemail = "vgherard@sissa.it",\ncomment = c(ORCID = "0000-0002-8215-3013"))
-#&gt; 4 person(given = "Valerio",\nfamily = "Gherardi",\nrole = c("aut", "cre"),\nemail = "vgherard@sissa.it",\ncomment = c(ORCID = "0000-0002-8215-3013"))
-#&gt; 5 person(given = "Valerio",\nfamily = "Gherardi",\nrole = c("aut", "cre"),\nemail = "vgherard@sissa.it",\ncomment = c(ORCID = "0000-0002-8215-3013"))
-#&gt;                             Maintainer
-#&gt; 1 Valerio Gherardi &lt;vgherard@sissa.it&gt;
-#&gt; 2 Valerio Gherardi &lt;vgherard@sissa.it&gt;
-#&gt; 3 Valerio Gherardi &lt;vgherard@sissa.it&gt;
-#&gt; 4 Valerio Gherardi &lt;vgherard@sissa.it&gt;
-#&gt; 5 Valerio Gherardi &lt;vgherard@sissa.it&gt;
-#&gt;                                                                                                                                    Description
-#&gt; 1 Provides support for building Feldman-Cousins confidence intervals\n[G. J. Feldman and R. D. Cousins (1998) &lt;doi:10.1103/PhysRevD.57.3873&gt;].
-#&gt; 2 Provides support for building Feldman-Cousins confidence intervals\n[G. J. Feldman and R. D. Cousins (1998) &lt;doi:10.1103/PhysRevD.57.3873&gt;].
-#&gt; 3 Provides support for building Feldman-Cousins confidence intervals\n[G. J. Feldman and R. D. Cousins (1998) &lt;doi:10.1103/PhysRevD.57.3873&gt;].
-#&gt; 4 Provides support for building Feldman-Cousins confidence intervals\n[G. J. Feldman and R. D. Cousins (1998) &lt;doi:10.1103/PhysRevD.57.3873&gt;].
-#&gt; 5 Provides support for building Feldman-Cousins confidence intervals\n[G. J. Feldman and R. D. Cousins (1998) &lt;doi:10.1103/PhysRevD.57.3873&gt;].
-#&gt;      License Encoding RoxygenNote SystemRequirements
-#&gt; 1 GPL (&gt;= 3)    UTF-8       7.1.1              C++11
-#&gt; 2 GPL (&gt;= 3)    UTF-8       7.1.1              C++11
-#&gt; 3 GPL (&gt;= 3)    UTF-8       7.1.1              C++11
-#&gt; 4 GPL (&gt;= 3)    UTF-8       7.1.1              C++11
-#&gt; 5 GPL (&gt;= 3)    UTF-8       7.1.1              C++11
-#&gt;                                URL                              BugReports
-#&gt; 1 https://github.com/vgherard/fcci https://github.com/vgherard/fcci/issues
-#&gt; 2 https://github.com/vgherard/fcci https://github.com/vgherard/fcci/issues
-#&gt; 3 https://github.com/vgherard/fcci https://github.com/vgherard/fcci/issues
-#&gt; 4 https://github.com/vgherard/fcci https://github.com/vgherard/fcci/issues
-#&gt; 5 https://github.com/vgherard/fcci https://github.com/vgherard/fcci/issues
-#&gt;   Config/testthat/edition                      Repository
-#&gt; 1                       3 https://vgherard.r-universe.dev
-#&gt; 2                       3 https://vgherard.r-universe.dev
-#&gt; 3                       3 https://vgherard.r-universe.dev
-#&gt; 4                       3 https://vgherard.r-universe.dev
-#&gt; 5                       3 https://vgherard.r-universe.dev
-#&gt;                          RemoteUrl RemoteRef
-#&gt; 1 https://github.com/vgherard/fcci    v1.0.0
-#&gt; 2 https://github.com/vgherard/fcci    v1.0.0
-#&gt; 3 https://github.com/vgherard/fcci    v1.0.0
-#&gt; 4 https://github.com/vgherard/fcci    v1.0.0
-#&gt; 5 https://github.com/vgherard/fcci    v1.0.0
-#&gt;                                  RemoteSha NeedsCompilation
-#&gt; 1 3df3ccab1ab9f0880c9a4140430851ff366a3669              yes
-#&gt; 2 3df3ccab1ab9f0880c9a4140430851ff366a3669              yes
-#&gt; 3 3df3ccab1ab9f0880c9a4140430851ff366a3669              yes
-#&gt; 4 3df3ccab1ab9f0880c9a4140430851ff366a3669              yes
-#&gt; 5 3df3ccab1ab9f0880c9a4140430851ff366a3669              yes
-#&gt;                        Packaged
-#&gt; 1 2021-07-03 09:16:24 UTC; root
-#&gt; 2 2021-07-03 09:16:24 UTC; root
-#&gt; 3 2021-07-03 09:16:24 UTC; root
-#&gt; 4 2021-07-03 09:16:24 UTC; root
-#&gt; 5 2021-07-03 09:16:24 UTC; root
-#&gt;                                                                  Author Built.R
-#&gt; 1 Valerio Gherardi [aut, cre] (&lt;https://orcid.org/0000-0002-8215-3013&gt;)   4.0.5
-#&gt; 2 Valerio Gherardi [aut, cre] (&lt;https://orcid.org/0000-0002-8215-3013&gt;)   4.1.0
-#&gt; 3 Valerio Gherardi [aut, cre] (&lt;https://orcid.org/0000-0002-8215-3013&gt;)    &lt;NA&gt;
-#&gt; 4 Valerio Gherardi [aut, cre] (&lt;https://orcid.org/0000-0002-8215-3013&gt;)   4.0.5
-#&gt; 5 Valerio Gherardi [aut, cre] (&lt;https://orcid.org/0000-0002-8215-3013&gt;)   4.1.0
-#&gt;            Built.Platform              Built.Date Built.OStype    _user _type
-#&gt; 1 x86_64-apple-darwin17.0 2021-07-03 09:22:46 UTC         unix vgherard   mac
-#&gt; 2 x86_64-apple-darwin17.0 2021-07-03 09:19:46 UTC         unix vgherard   mac
-#&gt; 3                    &lt;NA&gt;                    &lt;NA&gt;         &lt;NA&gt; vgherard   src
-#&gt; 4      x86_64-w64-mingw32 2021-07-03 09:17:56 UTC      windows vgherard   win
-#&gt; 5      x86_64-w64-mingw32 2021-07-03 09:18:22 UTC      windows vgherard   win
-#&gt;               _file               _published                _builder.upstream
-#&gt; 1    fcci_1.0.0.tgz 2021-07-03T09:23:40.826Z https://github.com/vgherard/fcci
-#&gt; 2    fcci_1.0.0.tgz 2021-07-03T09:23:41.044Z https://github.com/vgherard/fcci
-#&gt; 3 fcci_1.0.0.tar.gz 2021-07-03T09:23:41.181Z https://github.com/vgherard/fcci
-#&gt; 4    fcci_1.0.0.zip 2021-07-03T09:23:41.345Z https://github.com/vgherard/fcci
-#&gt; 5    fcci_1.0.0.zip 2021-07-03T09:23:41.635Z https://github.com/vgherard/fcci
-#&gt;   _builder.date                          _builder.commit _builder.registered
-#&gt; 1    1625304220 3df3ccab1ab9f0880c9a4140430851ff366a3669                true
-#&gt; 2    1625304220 3df3ccab1ab9f0880c9a4140430851ff366a3669                true
-#&gt; 3    1625304221 3df3ccab1ab9f0880c9a4140430851ff366a3669                true
-#&gt; 4    1625304221 3df3ccab1ab9f0880c9a4140430851ff366a3669                true
-#&gt; 5    1625304221 3df3ccab1ab9f0880c9a4140430851ff366a3669                true
-#&gt;   _builder.timestamp _builder.maintainerlogin _builder.distro  _builder.host
-#&gt; 1         1617373968                 vgherard           macos GitHub-Actions
-#&gt; 2         1617373968                 vgherard           macos GitHub-Actions
-#&gt; 3         1617373968                 vgherard           focal GitHub-Actions
-#&gt; 4         1617373968                 vgherard         windows GitHub-Actions
-#&gt; 5         1617373968                 vgherard         windows GitHub-Actions
-#&gt;   _builder.status                                                  _builder.url
-#&gt; 1         success https://github.com/r-universe/vgherard/actions/runs/996009318
-#&gt; 2         success https://github.com/r-universe/vgherard/actions/runs/996009318
-#&gt; 3         success https://github.com/r-universe/vgherard/actions/runs/996009318
-#&gt; 4         success https://github.com/r-universe/vgherard/actions/runs/996009318
-#&gt; 5         success https://github.com/r-universe/vgherard/actions/runs/996009318
-#&gt;                    _builder.sysdeps                           MD5sum
-#&gt; 1                              NULL 6c24c681dd48178eb515a224b00dd00f
-#&gt; 2                              NULL 0ffbb562ace26bde3670e5a48f5463d0
-#&gt; 3 libstdc++6, 10.2.0-5ubuntu1~20.04 9ca24cd15c82ac543d5f205096d5eba4
-#&gt; 4                              NULL f641390c413a4c2d120edebdca862671
-#&gt; 5                              NULL d40b1f82490e2d126ffba08dd9f4d760
-#&gt;                                                            _hard_deps
-#&gt; 1 Rcpp, Rcpp, assertthat, rlang, LinkingTo, Imports, Imports, Imports
-#&gt; 2 Rcpp, Rcpp, assertthat, rlang, LinkingTo, Imports, Imports, Imports
-#&gt; 3 Rcpp, Rcpp, assertthat, rlang, LinkingTo, Imports, Imports, Imports
-#&gt; 4 Rcpp, Rcpp, assertthat, rlang, LinkingTo, Imports, Imports, Imports
-#&gt; 5 Rcpp, Rcpp, assertthat, rlang, LinkingTo, Imports, Imports, Imports
-#&gt;                                         _soft_deps     Archs
-#&gt; 1 covr, testthat, Suggests, Suggests, NA, &gt;= 3.0.0      &lt;NA&gt;
-#&gt; 2 covr, testthat, Suggests, Suggests, NA, &gt;= 3.0.0      &lt;NA&gt;
-#&gt; 3 covr, testthat, Suggests, Suggests, NA, &gt;= 3.0.0      &lt;NA&gt;
-#&gt; 4 covr, testthat, Suggests, Suggests, NA, &gt;= 3.0.0 i386, x64
-#&gt; 5 covr, testthat, Suggests, Suggests, NA, &gt;= 3.0.0 i386, x64</div><div class='input'>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 5 × 32</span>
+#&gt;   `_id`  Package Type   Title Version `Authors@R` Maintainer Description License
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  
+#&gt; <span style='color: #BCBCBC;'>1</span> 60e02… fcci    Packa… Feld… 1.0.0   <span style='color: #949494;'>"</span>person(gi… Valerio G… <span style='color: #949494;'>"</span>Provides … GPL (&gt;…
+#&gt; <span style='color: #BCBCBC;'>2</span> 60e02… fcci    Packa… Feld… 1.0.0   <span style='color: #949494;'>"</span>person(gi… Valerio G… <span style='color: #949494;'>"</span>Provides … GPL (&gt;…
+#&gt; <span style='color: #BCBCBC;'>3</span> 60e02… fcci    Packa… Feld… 1.0.0   <span style='color: #949494;'>"</span>person(gi… Valerio G… <span style='color: #949494;'>"</span>Provides … GPL (&gt;…
+#&gt; <span style='color: #BCBCBC;'>4</span> 60e02… fcci    Packa… Feld… 1.0.0   <span style='color: #949494;'>"</span>person(gi… Valerio G… <span style='color: #949494;'>"</span>Provides … GPL (&gt;…
+#&gt; <span style='color: #BCBCBC;'>5</span> 60e02… fcci    Packa… Feld… 1.0.0   <span style='color: #949494;'>"</span>person(gi… Valerio G… <span style='color: #949494;'>"</span>Provides … GPL (&gt;…
+#&gt; <span style='color: #949494;'># … with 23 more variables: Encoding &lt;chr&gt;, RoxygenNote &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   SystemRequirements &lt;chr&gt;, URL &lt;chr&gt;, BugReports &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   Config/testthat/edition &lt;chr&gt;, Repository &lt;chr&gt;, RemoteUrl &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   RemoteRef &lt;chr&gt;, RemoteSha &lt;chr&gt;, NeedsCompilation &lt;chr&gt;, Packaged &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   Author &lt;chr&gt;, Built &lt;df[,4]&gt;, _user &lt;chr&gt;, _type &lt;chr&gt;, _file &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   _published &lt;chr&gt;, _builder &lt;df[,11]&gt;, MD5sum &lt;chr&gt;, _hard_deps &lt;list&gt;,</span>
+#&gt; <span style='color: #949494;'>#   _soft_deps &lt;list&gt;, Archs &lt;chr&gt;</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
