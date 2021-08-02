@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -31,26 +31,26 @@
 #' @details This function gives access to three types of information, depending
 #' on how many arguments are different from \code{NULL}:
 #'
-#' - \code{runiv_packages(universe)} lists all packages in the R-universe
+#' - \code{runi_packages(universe)} lists all packages in the R-universe
 #' \code{universe}.
-#' - \code{runiv_packages(universe, package)}, where \code{package} is a
+#' - \code{runi_packages(universe, package)}, where \code{package} is a
 #' string, lists all available version for package \code{package} in
 #' this universe.
-#' - \code{runiv_packages(universe, package, version)} lists all available
+#' - \code{runi_packages(universe, package, version)} lists all available
 #' builds for package \code{package} of version \code{version}
 #' (specified as a string).
 #'
 #' The argument \code{version} is ignored if \code{package} is \code{NULL}.
 #'
 #' @examples
-#' ( packages <- runiv_packages("vgherard") )
-#' ( versions <- runiv_packages("vgherard", packages[[1]]) )
-#' ( versions <- runiv_packages("vgherard", packages[[1]], versions[[1]]) )
+#' ( packages <- runi_packages("vgherard") )
+#' ( versions <- runi_packages("vgherard", packages[[1]]) )
+#' ( versions <- runi_packages("vgherard", packages[[1]], versions[[1]]) )
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_packages <- function(universe, package = NULL, version = NULL)
+runi_packages <- function(universe, package = NULL, version = NULL)
 {
         assert_is_string(universe)
         path <- "packages"
@@ -64,6 +64,6 @@ runiv_packages <- function(universe, package = NULL, version = NULL)
                 }
         }
 
-        response <- runiv_api_req(universe, path = path, method = "GET")
+        response <- runi_api_req(universe, path = path, method = "GET")
         parse_json_response(response)
 }

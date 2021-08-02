@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify

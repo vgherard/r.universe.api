@@ -1,18 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# runiv
+# runi
 
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/runiv)](https://CRAN.R-project.org/package=runiv)
-[![R-CMD-check](https://github.com/vgherard/runiv/workflows/R-CMD-check/badge.svg)](https://github.com/vgherard/runiv/actions)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![R-CMD-check](https://github.com/vgherard/runi/workflows/R-CMD-check/badge.svg)](https://github.com/vgherard/runi/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/vgherard/runiv/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/runiv?branch=master)
+coverage](https://codecov.io/gh/vgherard/runi/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/runi?branch=master)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/runi)](https://CRAN.R-project.org/package=runi)
+[![R-universe
+status](https://vgherard.r-universe.dev/badges/runi)](https://vgherard.r-universe.dev/)
 <!-- badges: end -->
 
-`{runiv}` provides a client for R-universe APIs associated to
+`{runi}` provides a client for R-universe APIs associated to
 R-universes. From the [R-universe project
 page](https://ropensci.org/r-universe/):
 
@@ -23,22 +28,22 @@ page](https://ropensci.org/r-universe/):
 
 ## Installation
 
-You can install the development version of `runiv` using
+You can install the development version of `runi` using
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("vgherard/runiv")
+devtools::install_github("vgherard/runi")
 ```
 
 ## Example
 
 ``` r
-df <- runiv::runiv_stats_descriptions("vgherard")
+df <- runi::runi_stats_descriptions("vgherard")
 df[, c("Package", "Title", "Version")]
 #> # A tibble: 7 x 3
 #>   Package  Title                                             Version   
 #>   <chr>    <chr>                                             <chr>     
-#> 1 runiv    Client for R-universe APIs                        0.0.0.9000
+#> 1 runi    Client for R-universe APIs                        0.0.0.9000
 #> 2 r2r      R-Object to R-Object Hash Maps                    0.1.1     
 #> 3 kgrams   Classical k-gram Language Models                  0.1.1.9000
 #> 4 scribblr A Notepad Inside RStudio                          0.2.0.9000

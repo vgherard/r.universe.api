@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -18,14 +18,14 @@
 #'
 #' @description Return the API hostname for a particular R-universe user.
 #'
-#' @inheritParams runiv_packages
+#' @inheritParams runi_packages
 #'
 #' @return a string, API hostname for the R-universe specified by \code{owner}.
 #'
 #' @author Valerio Gherardi
 #'
 #' @noRd
-runiv_host <- function(universe) {
+runi_host <- function(universe) {
         if (is.null(universe))
                 return("r-universe.dev")
         assert_is_string(universe)
@@ -36,7 +36,7 @@ runiv_host <- function(universe) {
 #'
 #' @description Make API request to an R-universe.
 #'
-#' @inheritParams runiv_packages
+#' @inheritParams runi_packages
 #' @param path endpoint of the API request.
 #' @param method API request method.
 #'
@@ -45,7 +45,7 @@ runiv_host <- function(universe) {
 #' @author Valerio Gherardi
 #'
 #' @noRd
-runiv_api_req <- function(
+runi_api_req <- function(
         universe, path, method = c("GET", "POST", "PUT", "DELETE")
         )
 {
@@ -55,9 +55,9 @@ runiv_api_req <- function(
         assert_is_string(path)
         method <- match.arg(method)
         url <- httr::modify_url(
-                "https://", hostname = runiv_host(universe), path = path
+                "https://", hostname = runi_host(universe), path = path
                 )
-        ua <- httr::user_agent("https://github.com/vgherard/runiv")
+        ua <- httr::user_agent("https://github.com/vgherard/runi")
 
         fun <- get(method, envir = rlang::fn_env(httr::GET))
         httr::stop_for_status(fun(url, ua))

@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,24 +14,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title List maintainers of an R-universe
+
+#' @title List R-universes
 #'
-#' @description Lists all maintainers, identified by email address,
-#' of an R-universe.
+#' @description List all available R-universes.
 #'
-#' @inheritParams runiv_packages
+#' @return A tibble.
 #'
-#' @return a \code{\link[tibble]{tibble}}.
-#'
-#' @examples runiv_stats_maintainers("vgherard")
+#' @examples runi_universes()
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_stats_maintainers <- function(universe) {
-        assert_is_string(universe)
-        response <- runiv_api_req(
-                universe, path = "stats/maintainers", method = "GET"
-                )
+runi_universes <- function() {
+        response <- runi_api_req(universe = NULL, path = "stats/organizations")
         parse_ndjson_response(response)
 }

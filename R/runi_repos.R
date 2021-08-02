@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,24 +14,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title External Dependencies
+#' @title R-universe repository base URL
 #'
-#' @description Get list with external libraries used in an R-universe universe.
+#' @description Get the base URL of an R-universe repository
 #'
-#' @inheritParams runiv_packages
+#' @inheritParams runi_packages
 #'
-#' @return a \code{\link[tibble]{tibble}}.
-#'
-#' @examples runiv_stats_sysdeps("vgherard")
+#' @return a string.
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_stats_sysdeps <- function(universe)
-{
+runi_repos <- function(universe) {
         assert_is_string(universe)
-        response <- runiv_api_req(
-                universe, path = "stats/sysdeps", method = "GET"
-        )
-        parse_ndjson_response(response)
+        httr::modify_url("https://", hostname = runi_host(universe))
 }

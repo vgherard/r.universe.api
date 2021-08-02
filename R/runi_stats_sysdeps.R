@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,25 +14,24 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title Recent Builds and Checks
+#' @title External Dependencies
 #'
-#' @description Get list with recent builds and checks of packages available in
-#' an R-universe.
+#' @description Get list with external libraries used in an R-universe universe.
 #'
-#' @inheritParams runiv_packages
+#' @inheritParams runi_packages
 #'
 #' @return a \code{\link[tibble]{tibble}}.
 #'
-#' @examples runiv_stats_checks("vgherard")
+#' @examples runi_stats_sysdeps("vgherard")
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_stats_checks <- function(universe)
+runi_stats_sysdeps <- function(universe)
 {
         assert_is_string(universe)
-        response <- runiv_api_req(
-                universe, path = "stats/checks", method = "GET"
+        response <- runi_api_req(
+                universe, path = "stats/sysdeps", method = "GET"
         )
         parse_ndjson_response(response)
 }

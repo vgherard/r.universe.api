@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -30,12 +30,12 @@ assert_is_string <- function(x, name = deparse(substitute(x)))
 {
         if (is.character(x) && length(x) == 1 && !is.na(x))
                 return(invisible(TRUE))
-        runiv_domain_error(name, "a length one character vector (not NA)")
+        runi_domain_error(name, "a length one character vector (not NA)")
 }
 
 #' @title Domain Errors
 #'
-#' @description Throw an error of class \code{runiv_domain_error} with an
+#' @description Throw an error of class \code{runi_domain_error} with an
 #' automatic message
 #'
 #' @param name name of object to be shown in error messages.
@@ -43,14 +43,14 @@ assert_is_string <- function(x, name = deparse(substitute(x)))
 #'
 #' @author Valerio Gherardi
 #'
-#' @name runiv_domain_error
+#' @name runi_domain_error
 #' @noRd
 
-runiv_domain_error <- function(name, expectation)
+runi_domain_error <- function(name, expectation)
 {
         h <- "Invalid input"
         x <- paste0("'", name, "' must be ", expectation, ".")
-        rlang::abort(c(h, x = x), class = "runiv_domain_error")
+        rlang::abort(c(h, x = x), class = "runi_domain_error")
 }
 
 #' @title Assert Online
@@ -70,7 +70,7 @@ assert_has_internet <- function()
             )
         {
                 h <- "No internet connection"
-                rlang::abort(h, class = "runiv_offline_error")
+                rlang::abort(h, class = "runi_offline_error")
         }
         return(invisible(TRUE))
 }

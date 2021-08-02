@@ -1,4 +1,4 @@
 library(testthat)
-library(runiv)
+library(runi)
 
-test_check("runiv")
+test_check("runi")

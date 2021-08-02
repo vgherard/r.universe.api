@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,24 +14,30 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title DESCRIPTIONs
+#' @title R-universe badges
 #'
-#' @description Get DESCRIPTION files of packages available in an R-universe.
+#' @description Returns the URL of the badge with current version of given
+#' package.
 #'
-#' @inheritParams runiv_packages
+#' @param universe A length one character. User or organization name of the
+#' the R-universe owner.
+#' @param package either \code{NULL}, or a length one character. Package name
+#' (see details).
 #'
-#' @return a \code{\link[tibble]{tibble}}.
-#'
-#' @examples runiv_stats_descriptions("vgherard")
+#' @return a character vector.
+#' @examples
+#' runi_badges("vgherard", "runi")
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_stats_descriptions <- function(universe)
+runi_badges <- function(universe, package)
 {
         assert_is_string(universe)
-        response <- runiv_api_req(
-                universe, path = "stats/descriptions", method = "GET"
-        )
-        parse_ndjson_response(response)
+        assert_is_string(package)
+        httr::modify_url(
+                "https://",
+                hostname = runi_host("vgherard"),
+                path = paste0("badges/", package)
+                )
 }

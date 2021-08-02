@@ -1,4 +1,4 @@
-# runiv
+# runi
 # Copyright (C) 2021  Valerio Gherardi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,18 +14,25 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#' @title R-universe repository base URL
+#' @title Recent Builds and Checks
 #'
-#' @description Get the base URL of an R-universe repository
+#' @description Get list with recent builds and checks of packages available in
+#' an R-universe.
 #'
-#' @inheritParams runiv_packages
+#' @inheritParams runi_packages
 #'
-#' @return a string.
+#' @return a \code{\link[tibble]{tibble}}.
+#'
+#' @examples runi_stats_checks("vgherard")
 #'
 #' @author Valerio Gherardi
 #'
 #' @export
-runiv_repos <- function(universe) {
+runi_stats_checks <- function(universe)
+{
         assert_is_string(universe)
-        httr::modify_url("https://", hostname = runiv_host(universe))
+        response <- runi_api_req(
+                universe, path = "stats/checks", method = "GET"
+        )
+        parse_ndjson_response(response)
 }
