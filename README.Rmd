@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/vgherard/runi/branch/master/graph/badge.svg)](https://codecov.io/gh/vgherard/runi?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/runi)](https://CRAN.R-project.org/package=runi)
 [![R-universe status](https://vgherard.r-universe.dev/badges/runi)](https://vgherard.r-universe.dev/)
+[![Website](https://img.shields.io/badge/Website-here-blue)](https://vgherard.github.io/runi)
 <!-- badges: end -->
 
 `{runi}` provides a client for R-universe APIs associated to R-universes. From the [R-universe project page](https://ropensci.org/r-universe/):
