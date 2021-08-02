@@ -66,5 +66,5 @@ parse_json_response <- function(
         if (is.data.frame(res))
                 res <- tibble::as_tibble(res)
 
-        res
+        return(res)
 }
