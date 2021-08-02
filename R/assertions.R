@@ -63,8 +63,14 @@ runiv_domain_error <- function(name, expectation)
 
 assert_has_internet <- function()
 {
-        if (curl::has_internet())
-                return(invisible(TRUE))
-        h <- "No internet connection"
-        rlang::abort(h, class = "runiv_offline_error")
+        # Use `Sys.setenv("SIMULATE_OFFLINE" = TRUE)` to simulate
+        # absence of internet connection
+        if (!curl::has_internet() ||
+            as.logical(Sys.getenv("SIMULATE_OFFLINE", unset = FALSE))
+            )
+        {
+                h <- "No internet connection"
+                rlang::abort(h, class = "runiv_offline_error")
+        }
+        return(invisible(TRUE))
 }
