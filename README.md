@@ -43,7 +43,7 @@ df[, c("Package", "Title", "Version")]
 #> # A tibble: 7 x 3
 #>   Package  Title                                             Version   
 #>   <chr>    <chr>                                             <chr>     
-#> 1 runi    Client for R-universe APIs                        0.0.0.9000
+#> 1 runiv    Client for R-universe APIs                        0.0.0.9000
 #> 2 r2r      R-Object to R-Object Hash Maps                    0.1.1     
 #> 3 kgrams   Classical k-gram Language Models                  0.1.1.9000
 #> 4 scribblr A Notepad Inside RStudio                          0.2.0.9000

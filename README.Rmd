@@ -36,6 +36,7 @@ You can install the development version of `runi` using
 devtools::install_github("vgherard/runi")
 ```
 
+
 ## Example
 
 ```{r example}
