@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • runi</title>
+<title>List R-universes — runi_universes • runi</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="List R-universes — runi_universes" />
+<meta property="og:description" content="List all available R-universes." />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,84 +106,45 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>List R-universes</h1>
+    <small class="dont-index">Source: <a href='https://github.com/vgherard/runi/blob/master/R/runi_universes.R'><code>R/runi_universes.R</code></a></small>
+    <div class="hidden name"><code>runi_universes.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>List all available R-universes.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>runi_universes</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="runi_badges.html">runi_badges()</a></code> </p>
-        </td>
-        <td><p>R-universe badges</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="runi_packages.html">runi_packages()</a></code> </p>
-        </td>
-        <td><p>Packages in an R-universe</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="runi_repos.html">runi_repos()</a></code> </p>
-        </td>
-        <td><p>R-universe repository base URL</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="runi_stats_checks.html">runi_stats_checks()</a></code> </p>
-        </td>
-        <td><p>Recent Builds and Checks</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="runi_stats_descriptions.html">runi_stats_descriptions()</a></code> </p>
-        </td>
-        <td><p>DESCRIPTIONs</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="runi_stats_maintainers.html">runi_stats_maintainers()</a></code> </p>
-        </td>
-        <td><p>List maintainers of an R-universe</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="runi_stats_sysdeps.html">runi_stats_sysdeps()</a></code> </p>
-        </td>
-        <td><p>External Dependencies</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="runi_universes.html">runi_universes()</a></code> </p>
-        </td>
-        <td><p>List R-universes</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A tibble.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Valerio Gherardi</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>runi_universes</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 309 × 3</span>
+#&gt;    packages   maintainers organization   
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          
+#&gt; <span style='color: #BCBCBC;'> 1</span> <span style='color: #949494;'>&lt;chr [4]&gt;</span>  <span style='color: #949494;'>&lt;chr [2]&gt;</span>   hongyuanjia    
+#&gt; <span style='color: #BCBCBC;'> 2</span> <span style='color: #949494;'>&lt;chr [6]&gt;</span>  <span style='color: #949494;'>&lt;chr [4]&gt;</span>   hsonne         
+#&gt; <span style='color: #BCBCBC;'> 3</span> <span style='color: #949494;'>&lt;chr [5]&gt;</span>  <span style='color: #949494;'>&lt;chr [3]&gt;</span>   akoyabio       
+#&gt; <span style='color: #BCBCBC;'> 4</span> <span style='color: #949494;'>&lt;chr [5]&gt;</span>  <span style='color: #949494;'>&lt;chr [4]&gt;</span>   statistikat    
+#&gt; <span style='color: #BCBCBC;'> 5</span> <span style='color: #949494;'>&lt;chr [6]&gt;</span>  <span style='color: #949494;'>&lt;chr [1]&gt;</span>   timelyportfolio
+#&gt; <span style='color: #BCBCBC;'> 6</span> <span style='color: #949494;'>&lt;chr [5]&gt;</span>  <span style='color: #949494;'>&lt;chr [3]&gt;</span>   ledell         
+#&gt; <span style='color: #BCBCBC;'> 7</span> <span style='color: #949494;'>&lt;chr [1]&gt;</span>  <span style='color: #949494;'>&lt;chr [1]&gt;</span>   aurora-mareviv 
+#&gt; <span style='color: #BCBCBC;'> 8</span> <span style='color: #949494;'>&lt;chr [1]&gt;</span>  <span style='color: #949494;'>&lt;chr [1]&gt;</span>   ideas-lab-nus  
+#&gt; <span style='color: #BCBCBC;'> 9</span> <span style='color: #949494;'>&lt;chr [15]&gt;</span> <span style='color: #949494;'>&lt;chr [11]&gt;</span>  ropenspain     
+#&gt; <span style='color: #BCBCBC;'>10</span> <span style='color: #949494;'>&lt;chr [1]&gt;</span>  <span style='color: #949494;'>&lt;chr [1]&gt;</span>   r-simmer       
+#&gt; <span style='color: #949494;'># … with 299 more rows</span></div><div class='input'>
+</div></pre>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
