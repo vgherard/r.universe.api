@@ -19,7 +19,7 @@
 #'
 #' @description List all available R-universes.
 #'
-#' @return A character vector
+#' @return A tibble.
 #'
 #' @examples runiv_universes()
 #'

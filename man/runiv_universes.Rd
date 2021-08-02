@@ -7,7 +7,7 @@
 runiv_universes()
 }
 \value{
-A character vector
+A tibble.
 }
 \description{
 List all available R-universes.
